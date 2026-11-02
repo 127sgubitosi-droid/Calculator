@@ -1,4 +1,3 @@
-console.log('Happy developing ✨')
 function tap() {
 }
 function delRecent(){
