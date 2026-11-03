@@ -2,40 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Simple Calculator</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
 </head>
-<body onload="loading()">
-
-<div class="calculator"></div>
-<div class="greenScreen"></div>
-<div id="mathExpression"></div>
-<div id="answer"></div>
-<input type="text">
-
-<div class="firstGrp"></div>
-<button onclick="tap('(')">(</button>
-<button onclick="tap(')')">)</button>
-<button onclick="delRecent()">←</button>
-<button onclick="clearCalc()">→</button>
-<button onclick="tap('%')">%</button>
-<button onclick="tap('^')">^</button>
-
-<div class="secondGrp"></div>
-<button class="buttonNumbers" onclick="tap('7')">7</button>
-<button class="buttonNumbers" onclick="tap('8')">8</button>
-<button class="buttonNumbers" onclick="tap('9')">9</button>
-<button class="buttonSigns" onclick="tap('/')">/</button>
-<button class="buttonNumbers" onclick="tap('4')">4</button>
-<button class="buttonNumbers" onclick="tap('5')">5</button>
-<button class="buttonNumbers" onclick="tap('6')">6</button>
-<button class="buttonSigns" onclick="tap('X')">X</button>
-<button class="buttonSigns" onclick="tap('-')">-</button>
-<button class="buttonNumbers" onclick="tap('0')">0</button>
-<button class="buttonSigns" onclick="tap('.')">.</button>
-<button class="buttonSigns" onclick="tap('=')">=</button>
-<button class="buttonSigns" onclick="tap('+')">+</button>
-
+<body>
+<script src="index.js"></script>
+<div class="calculator">
+    <div class="greenScreen">
+        <div id="expressionDisplay" class="expressionText"></div>
+        <div id="resultDisplay" class="resultText"></div>
+    </div>
+    <div class="row">
+        <button class="button lightButton ironButton" onclick="addCharacter('(')">(</button>
+        <button class="button lightButton ironButton" onclick="addCharacter(')')">)</button>
+        <button class="button lightButton arrowButton" onclick="prevHistory()">←</button>
+        <button class="button lightButton arrowButton" onclick="nextHistory()">→</button>
+        <button class="button lightButton ironButton" onclick="addCharacter('%')">%</button>
+        <button class="button lightButton ironButton" onclick="addCharacter('^')">^</button>
+    </div>
+    <div class="row">
+        <button class="button numButton" onclick="addCharacter('7')">7</button>
+        <button class="button numButton" onclick="addCharacter('8')">8</button>
+        <button class="button numButton" onclick="addCharacter('9')">9</button>
+        <button class="button opButton" onclick="addCharacter('/')">/</button>
+    </div>
+    <div class="row">
+        <button class="button numButton" onclick="addCharacter('4')">4</button>
+        <button class="button numButton" onclick="addCharacter('5')">5</button>
+        <button class="button numButton" onclick="addCharacter('6')">6</button>
+        <button class="button opButton" onclick="addCharacter('*')">X</button>
+    </div>
+    <div class="row">
+        <button class="button numButton" onclick="addCharacter('1')">1</button>
+        <button class="button numButton" onclick="addCharacter('2')">2</button>
+        <button class="button numButton" onclick="addCharacter('3')">3</button>
+        <button class="button opButton" onclick="addCharacter('-')">-</button>
+    </div>
+    <div class="row">
+        <button class="button numButton" onclick="addCharacter('0')">0</button>
+        <button class="button numButton" onclick="addCharacter('.')">.</button>
+        <button class="button numButton" onclick="calculateResult()">=</button>
+        <button class="button opButton" onclick="addCharacter('+')">+</button>
+    </div>
+</div>
 </body>
 </html>
